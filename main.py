@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import boto3
 import json
 from datetime import datetime
+import uuid
 load_dotenv()
 
 """
@@ -61,7 +62,7 @@ def main():
             client.put_record(
             StreamName='clod2021-gruppo5-smart-bracelet',
             Data=b64data,
-            PartitionKey=str(datetime.now())
+            PartitionKey=str(uuid.uuid4())
 
             )
         )
