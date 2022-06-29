@@ -43,10 +43,12 @@ def simulate_smart_bracelet(_):
 
     return device_id
 
+
 def bootchecks():
     if not os.getenv("AWS_KINESIS_STREAM_NAME", False):
         print("Set AWS_KINESIS_STREAM_NAME env var first!")
         exit()
+
 
 def main():
     with Pool(bracelet_count) as pool:
@@ -54,6 +56,7 @@ def main():
             simulate_smart_bracelet,
             list(range(bracelet_count))
         )
+
 
 if __name__ == "__main__":
     bootchecks()
