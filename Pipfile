@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 boto3 = "==1.24.6"
+pyyaml = "*"
 
 [dev-packages]
 
